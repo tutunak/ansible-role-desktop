@@ -1,4 +1,9 @@
 ---
+- name: Enable rpm fusion
+  dnf:
+    name: "{{ rpm_fusion }}"
+    state: present
+
 - name: Install Google Chrome
   dnf:
     name: "{{ google_chrome_package }}"
@@ -8,4 +13,5 @@
   dnf:
     name:
       - keepassxc
+      - vlc
     state: present
