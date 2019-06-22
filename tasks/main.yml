@@ -15,4 +15,5 @@
       - keepassxc
       - vlc
       - mpv
+      - anki
     state: present
