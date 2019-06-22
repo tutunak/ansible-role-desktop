@@ -1,0 +1,11 @@
+---
+- name: Install Google Chrome
+  dnf:
+    name: "{{ google_chrome_package }}"
+    state: present
+
+- name: Install packages by list
+  dnf:
+    name:
+      - keepassxc
+    state: present
