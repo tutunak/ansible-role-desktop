@@ -14,4 +14,5 @@
     name:
       - keepassxc
       - vlc
+      - mpv
     state: present
