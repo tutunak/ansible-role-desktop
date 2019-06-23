@@ -21,4 +21,5 @@
       - zsh
       - "{{ ya_disk }}"
       - mc
+      - starace
     state: present
