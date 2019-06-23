@@ -19,4 +19,5 @@
       - mpv
       - anki
       - zsh
+      - "{{ ya_disk }}"
     state: present
