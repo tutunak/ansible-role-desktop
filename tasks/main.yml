@@ -20,4 +20,5 @@
       - anki
       - zsh
       - "{{ ya_disk }}"
+      - mc
     state: present
