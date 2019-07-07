@@ -22,4 +22,5 @@
       - "{{ ya_disk }}"
       - mc
       - strace
+      - dnf-utils
     state: present
