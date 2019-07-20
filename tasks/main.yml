@@ -23,4 +23,5 @@
       - mc
       - strace
       - dnf-utils
+      - screen
     state: present
