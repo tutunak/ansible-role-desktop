@@ -25,3 +25,12 @@
       - dnf-utils
       - screen
     state: present
+
+- name: Enable and start services
+  systemd:
+      name: {{ item }}
+      enabled: yes
+      state: started
+  with_items:
+    - firewalld
+    - sshd
