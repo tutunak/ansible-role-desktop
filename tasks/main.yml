@@ -13,7 +13,7 @@
 
 - name: Install packages by list
   dnf:
-    name:
+    name: 
       - keepassxc
       - vlc
       - mpv
