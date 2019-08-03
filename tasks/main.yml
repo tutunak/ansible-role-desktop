@@ -1,7 +1,7 @@
 ---
 - name: Enable rpm fusion
   dnf:
-    name:
+    name: 
       - "{{ rpm_fusion_free }}"
       - "{{ rpm_fusion_nonfree }}"
     state: present
