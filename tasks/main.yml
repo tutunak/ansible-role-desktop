@@ -1,4 +1,7 @@
 ---
+- name: vars
+  debug:
+    var: hostvars[inventory_hostname]
 - name: Enable rpm fusion
   dnf:
     name:
@@ -24,6 +27,7 @@
       - strace
       - dnf-utils
       - screen
+      - restic
     state: present
 
 - name: Enable and start services
