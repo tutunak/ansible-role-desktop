@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - use: actions/checkout@v2
+    - uses: actions/checkout@v2
 
     - name: Lint Ansible
       uses: ansible/ansible-lint-atcion@master
