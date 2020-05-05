@@ -1,15 +1,10 @@
 name: Ansible Lint
-
 on: [push, pull_request]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-
     - name: Lint Ansible
       uses: ansible/ansible-lint-action@v4.1.0
       with:
