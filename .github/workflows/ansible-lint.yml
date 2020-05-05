@@ -5,13 +5,13 @@ on: [push, pull_request]
 jobs:
   build:
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-  - use: actions/checkout@v2
+    steps:
+    - use: actions/checkout@v2
 
-  - name: Lint Ansible
-    uses: ansible/ansible-lint-atcion@master
-    with:
-      targets: "./"
-      args: "-q"
+    - name: Lint Ansible
+      uses: ansible/ansible-lint-atcion@master
+      with:
+        targets: "./"
+        args: "-q"
