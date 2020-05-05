@@ -1,0 +1,17 @@
+name: Ansible Lint
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+  run-on: ubuntu-latest
+
+  steps:
+  - use: actions/checkout@v2
+
+  - name: Lint Ansible
+    uses: ansible/ansible-lint-atcion@master
+    with:
+      targets: "./"
+      args: "-q"
