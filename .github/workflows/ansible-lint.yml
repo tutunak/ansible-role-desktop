@@ -8,5 +8,5 @@ jobs:
     - name: Lint Ansible
       uses: ansible/ansible-lint-action@v4.1.0
       with:
-        targets: "./"
+        targets: "/"
         args: "-q"
