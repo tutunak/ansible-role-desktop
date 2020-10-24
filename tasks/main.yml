@@ -6,11 +6,6 @@
       - "{{ rpm_fusion_nonfree }}"
     state: present
 
-- name: Install Google Chrome
-  dnf:
-    name: "{{ google_chrome_package }}"
-    state: present
-
 - name: Install packages by list
   dnf:
     name:
@@ -19,12 +14,13 @@
       - mpv
       - anki
       - zsh
-      - "{{ ya_disk }}"
       - mc
       - strace
       - dnf-utils
       - screen
       - restic
+      - vim
+      - cowsay
     state: present
 
 - name: Enable and start services
