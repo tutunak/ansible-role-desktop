@@ -20,7 +20,7 @@
       - screen
       - restic
       - vim
-      - cowsay
+      - thunderbird
     state: present
 
 - name: Delete packages
