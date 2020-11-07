@@ -23,6 +23,11 @@
       - cowsay
     state: present
 
+- name: Delete packages
+  dnf:
+    name:
+      - cowsay
+
 - name: Enable and start services
   systemd:
       name: "{{ item }}"
