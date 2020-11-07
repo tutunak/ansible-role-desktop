@@ -27,6 +27,7 @@
   dnf:
     name:
       - cowsay
+    state: absent
 
 - name: Enable and start services
   systemd:
