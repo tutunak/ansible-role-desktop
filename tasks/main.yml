@@ -5,35 +5,31 @@
       - "{{ rpm_fusion_free }}"
       - "{{ rpm_fusion_nonfree }}"
     state: present
+  when: enable_rpm_fusion | bool
 
 - name: Install packages by list
   dnf:
-    name:
-      - keepassxc
-      - vlc
-      - mpv
-      - zsh
-      - mc
-      - strace
-      - dnf-utils
-      - screen
-      - restic
-      - vim
-      - thunderbird
-      - qbittorrent
+    name: "{{ packages }}"
     state: present
+  when: packages | bool
 
 - name: Delete packages
   dnf:
-    name:
-      - cowsay
+    name: "{{ packages_to_remove }}"
     state: absent
+  when: packages_to_remove | bool
 
-- name: Enable and start services
+- name: Start services
   systemd:
       name: "{{ item }}"
-      enabled: yes
       state: started
-  with_items:
-    - firewalld
-    - sshd
+  with_items: "{{ start_services }}"
+  when: start_services | bool
+
+- name: Enable services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+  with_items: "{{ enable_services }}"
+  when: enable_services | bool
+
