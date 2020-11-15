@@ -17,7 +17,7 @@
   dnf:
     name: "{{ packages_to_remove }}"
     state: absent
-  when: packages_to_remove | lengh > 1
+  when: packages_to_remove | length > 1
 
 - name: Start services
   systemd:
