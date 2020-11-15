@@ -5,31 +5,31 @@
       - "{{ rpm_fusion_free }}"
       - "{{ rpm_fusion_nonfree }}"
     state: present
-  when: enable_rpm_fusion | bool
+  when: enable_rpm_fusion
 
 - name: Install packages by list
   dnf:
     name: "{{ packages }}"
     state: present
-  when: packages | bool
+  when: packages | length > 1
 
 - name: Delete packages
   dnf:
     name: "{{ packages_to_remove }}"
     state: absent
-  when: packages_to_remove | bool
+  when: packages_to_remove | lengh > 1
 
 - name: Start services
   systemd:
       name: "{{ item }}"
       state: started
   with_items: "{{ start_services }}"
-  when: start_services | bool
+  when: start_services
 
 - name: Enable services
   systemd:
     name: "{{ item }}"
     enabled: yes
   with_items: "{{ enable_services }}"
-  when: enable_services | bool
+  when: enable_services
 
