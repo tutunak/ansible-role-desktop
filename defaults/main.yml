@@ -9,3 +9,4 @@ packages_to_remove: []
 enable_rpm_fusion: false
 start_services: []
 enable_services: []
+pip_packages: []

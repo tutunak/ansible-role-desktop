@@ -33,3 +33,6 @@
   with_items: "{{ enable_services }}"
   when: enable_services
 
+- name: Install pip packages
+  pip:
+    name: "{{ pip_packages }}"
